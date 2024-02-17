@@ -1,0 +1,14 @@
+torch
+numpy
+pandas
+matplotlib
+wandb
+pytest
+pytest-mock
+PyQt5
+sphinx
+autodocsumm
+sphinx-rtd-theme
+sphinx-notfound-page
+sphinx-copybutton
+nbsphinx
