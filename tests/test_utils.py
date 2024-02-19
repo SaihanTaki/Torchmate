@@ -116,24 +116,27 @@ def test_colorize_text_bold_reset():
     assert result == "\033[1m\033[38;2;0;0;0mTest\033[0m"
 
 
-######## 
-
-@pytest.fixture
-def example_history():
-    # Example history data
-    history = {
-        "loss": [0.5, 0.4, 0.3],
-        "val_loss": [0.6, 0.5, 0.4],
-        "lr": [0.001, 0.0001, 0.00001],
-        "accuracy": [0.8, 0.85, 0.9],
-        "val_accuracy": [0.75, 0.78, 0.82]
-    }
-    return history
-
-def test_history_plotter(example_history):
-    plotter = HistoryPlotter(history=example_history)
+######## Testing the HistoryPlotter util #########
     
-    plotter.plot_all()
-    plotter.plot_loss()
-    plotter.plot_lr()
-    plotter.plot_metrics()
+# This test needs PyQT5 or any other gui backend 
+# supported by matplotlib installed 
+
+# @pytest.fixture
+# def example_history():
+#     # Example history data
+#     history = {
+#         "loss": [0.5, 0.4, 0.3],
+#         "val_loss": [0.6, 0.5, 0.4],
+#         "lr": [0.001, 0.0001, 0.00001],
+#         "accuracy": [0.8, 0.85, 0.9],
+#         "val_accuracy": [0.75, 0.78, 0.82]
+#     }
+#     return history
+
+# def test_history_plotter(example_history):
+#     plotter = HistoryPlotter(history=example_history)
+    
+#     plotter.plot_all()
+#     plotter.plot_loss()
+#     plotter.plot_lr()
+#     plotter.plot_metrics()
