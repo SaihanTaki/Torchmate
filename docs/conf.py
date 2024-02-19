@@ -21,6 +21,17 @@ project = 'Torchmate'
 copyright = f'{datetime.datetime.now().year}, Abdullah Saihan Taki'
 author = 'Abdullah Saihan Taki'
 
+
+def get_version():
+    sys.path.append("../torchmate")
+    from __version__ import __version__ as version
+
+    sys.path.pop(-1)
+    return version
+
+
+version = get_version()
+
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
@@ -38,22 +49,16 @@ extensions = ["sphinx_rtd_theme",
 templates_path = ['_templates']
 exclude_patterns = []
 
-
-
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinx_rtd_theme'
-#html_theme = 'faculty-sphinx-theme'
 html_static_path = ['_static']
-
 html_logo = "logo.png"
-
 html_css_files = [
     'faculty.css', 
     # https://github.com/facultyai/faculty-sphinx-theme/blob/master/faculty_sphinx_theme/static/css/faculty.css
 ]
-
 html_theme_option = {
     "style_external_link": True
 }
