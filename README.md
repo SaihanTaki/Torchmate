@@ -3,14 +3,14 @@
 ![logo](docs/logo.png)  
 **A High level PyTorch Training Library**
 
-[![Generic badge](https://img.shields.io/badge/License-MIT-<COLOR>.svg?style=flat)](https://github.com/SaihanTaki/torchmate/blob/master/LICENSE)
+[![Generic badge](https://img.shields.io/badge/License-MIT-<COLOR>.svg?style=flat)](https://github.com/SaihanTaki/torchmate/blob/master/LICENSE.txt)
 [![Read the Docs](https://img.shields.io/readthedocs/torchmate?style=flat&logo=readthedocs&logoColor=white)](https://torchmate.readthedocs.io/en/latest/) 
 
 </div>
 
 ### [📚 Project Documentation](https://torchmate.readthedocs.io/en/latest/)
 
-Visit [Read The Docs Project Page](https://torchmate.readthedocs.io/en/latest/) or read following README to know more about Torchmate library
+Visit [Torchmate's Read The Docs Project Page](https://torchmate.readthedocs.io/en/latest/) or read following README to know more about Torchmate library
 
 
 ### 💡 Introduction
@@ -86,4 +86,4 @@ history = trainer.fit()
 
 
 ### 🛡️ License <a name="license"></a>
-Torchmate is distributed under [MIT License](https://github.com/SaihanTaki/torchmate/blob/master/LICENSE)
+Torchmate is distributed under [MIT License](https://github.com/SaihanTaki/torchmate/blob/master/LICENSE.txt)
