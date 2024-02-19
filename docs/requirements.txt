@@ -1,0 +1,14 @@
+Sphinx==7.2.6
+sphinx-copybutton==0.5.2
+sphinx-notfound-page==1.0.0
+sphinx-rtd-theme==2.0.0
+sphinxcontrib-applehelp==1.0.8
+sphinxcontrib-devhelp==1.0.6
+sphinxcontrib-htmlhelp==2.0.5
+sphinxcontrib-jquery==4.1
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==1.0.7
+sphinxcontrib-serializinghtml==1.1.10
+autodocsumm==0.2.12
+nbsphinx==0.9.3
+matplotlib==3.8.3
