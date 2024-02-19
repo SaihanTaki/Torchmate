@@ -3,11 +3,20 @@
 ![logo](docs/logo.png)  
 **A High level PyTorch Training Library**
 
+[![Generic badge](https://img.shields.io/badge/License-MIT-<COLOR>.svg?style=flat)](https://github.com/SaihanTaki/torchmate/blob/master/LICENSE)
+[![Read the Docs](https://img.shields.io/readthedocs/torchmate?style=flat&logo=readthedocs&logoColor=white)](https://torchmate.readthedocs.io/en/latest/) 
+
 </div>
+
+### [📚 Project Documentation](https://torchmate.readthedocs.io/en/latest/)
+
+Visit [Read The Docs Project Page](https://torchmate.readthedocs.io/en/latest/) or read following README to know more about Torchmate library
+
 
 ### 💡 Introduction
 
-So,the question is: Why do I write Torchmate? I was a tensorflow and keras fanboy. But during my undergrad thesis I needed to use pytorch. I was astonished with pytoroch’s flexibility. But I had to write the same boilerplate code which was quiet frustrating to me. So, I decided to use a high level library like Catalyst or Lightning. Catalyst was great, but I missed Keras's verbose training output (which is cleaner) for better visualization (I know it's not a very good reason for writing a library). Pytorch Lightning also very good, but it changes a lot how we usually structure our code. Additionally, I was curious about how high-level frameworks like Keras, Catalyst, and Lightning function internally and utilize callbacks for extending functionalities. Building a minimalistic library myself seemed like the best way to understand these concepts. So, that's why I built Torchmate. Torchmate incorporates everything (actually not everything, some functionalities are still in progress) I need and the way I prefere as a deep learning practitioner. 
+So, why did I write Torchmate? I was a big fan of TensorFlow and Keras. But during my undergrad thesis I needed to use PyTorch. I was astonished with PyToroch’s flexibility. But I had to write the same boilerplate code which was quite frustrating to me. So, I decided to use a high level library like Catalyst or Lightning. Catalyst was great, but I missed Keras's verbose training output (which is cleaner) for better visualization (I know it's not a very good reason for writing a library). Pytorch Lightning also very good, but it changes a lot how we usually structure our code. Additionally, I was curious about how high-level frameworks like Keras, Catalyst, or Lightning work internally and utilize callbacks for extending functionalities. Building a minimalistic library myself seemed like the best way to understand these concepts. So, that's why I built Torchmate. Torchmate incorporates everything (actually not everything, some functionalities are still under development) I need and the way I prefere as a deep learning practitioner. 
+
 
 
 ### 🔑 Key Features
