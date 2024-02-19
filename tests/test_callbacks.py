@@ -49,22 +49,25 @@ def trainer():
 
 ############################ CSVLogger ############################
 
-def test_csv_logger_initialization():
-    csv_logger = CSVLogger(filename="test_logs/log.csv")
-    assert csv_logger.filename == "test_logs/log.csv"
+def test_csv_logger_initialization(tmpdir):
+    filename = os.path.join(tmpdir,"test_logs/log.csv")
+    csv_logger = CSVLogger(filename=filename)
+    assert csv_logger.filename == filename
     assert csv_logger.separator == ","
     assert csv_logger.append is False
     assert csv_logger.current_epoch == 0
 
 
-def test_csv_logger_on_experiment_begin(trainer):
-    csv_logger = CSVLogger(filename="test_logs/log.csv")
+def test_csv_logger_on_experiment_begin(trainer, tmpdir):
+    filename = os.path.join(tmpdir,"test_logs/log.csv")
+    csv_logger = CSVLogger(filename=filename)
     csv_logger.on_experiment_begin(trainer)
-    assert os.path.exists("test_logs")
+    assert os.path.exists(os.path.join(tmpdir,"test_logs"))
 
 
-def test_csv_logger_on_epoch_end(trainer):
-    csv_logger = CSVLogger(filename="test_logs/log.csv")
+def test_csv_logger_on_epoch_end(trainer, tmpdir):
+    filename = os.path.join(tmpdir,"test_logs/log.csv")
+    csv_logger = CSVLogger(filename=filename)
     csv_logger.on_experiment_begin(trainer)
     trainer.history["loss"] = [1.0, 0.5, 0.3]
     trainer.history["val_loss"] = [2.0, 0.7, 0.1]
@@ -72,7 +75,7 @@ def test_csv_logger_on_epoch_end(trainer):
     trainer.history["val_acc"] = [2.0, 0.7, 0.1]
     csv_logger.on_epoch_end(trainer)
     assert csv_logger.current_epoch == 1
-    with open("test_logs/log.csv", "r") as f:
+    with open(filename, "r") as f:
         reader = csv.reader(f)
         header = next(reader)
         assert header == ['Epoch', 'loss', 'val_loss', 'acc', 'val_acc']
