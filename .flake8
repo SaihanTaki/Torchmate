@@ -1,5 +1,6 @@
 [flake8]
-max-line-length = 120
+max-line-length =  135
+max-doc-length = 200
 exclude =.git,__pycache__,docs/conf.py,build,dist,setup.py,tests,.venv
-ignore = I101,I201,F401,F403,S001,D100,D101,D102,D103,D104,D105,D106,D107,D200,D205,D400,W504,D202,E203,W503,B006,D412
+ignore = F401,D100,D102,D103,D107,D104,D200,D202,D207,D400,E203,E701
 inline-quotes = "

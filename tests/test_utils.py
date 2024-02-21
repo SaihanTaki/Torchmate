@@ -1,21 +1,28 @@
-import torch
-import pytest
 import sys
 
+import pytest
+import torch
 
 sys.path.append("..")
 
-from torchmate.utils import RunningAverage, ProgressBar, colorize_text, HistoryPlotter
+from torchmate.utils import (  # noqa: E402
+    HistoryPlotter,
+    ProgressBar,
+    RunningAverage,
+    colorize_text,
+)
 
 skip_if_no_cuda = pytest.mark.skipif(not torch.cuda.is_available(), reason="Cuda is not available")
 
 
-###### RunningAverage ##########
+# RunningAverage
+
 
 def test_running_average_initialization():
     avg = RunningAverage()
     assert avg.steps == 0
     assert avg.total == 0
+
 
 def test_running_average_update():
     avg = RunningAverage()
@@ -24,20 +31,22 @@ def test_running_average_update():
     assert avg.steps == 2
     assert avg.total == 6
 
+
 def test_running_average_call():
     avg = RunningAverage()
     avg.update(2)
     avg.update(4)
     assert avg() == 3.0
 
+
 def test_running_average_no_update():
     avg = RunningAverage()
     assert avg() == 0.0
 
 
+# ProgressBar
 
-################## ProgressBar ###########
-    
+
 @pytest.fixture
 def progress_bar():
     return ProgressBar(total=100, bar_length=30, prefix="Testing")
@@ -70,9 +79,9 @@ def test_progress_bar_complete(progress_bar, capsys):
     assert captured.out.endswith("\n")
 
 
+# colorize_text
 
-##### colorize_text ######
-    
+
 def test_colorize_text_default():
     result = colorize_text("Test")
     assert result == "\033[38;2;0;0;0mTest\033[0m"
@@ -116,10 +125,10 @@ def test_colorize_text_bold_reset():
     assert result == "\033[1m\033[38;2;0;0;0mTest\033[0m"
 
 
-######## Testing the HistoryPlotter util #########
-    
-# This test needs PyQT5 or any other gui backend 
-# supported by matplotlib installed 
+# Testing the HistoryPlotter util
+
+# This test needs PyQT5 or any other gui backend
+# supported by matplotlib installed
 
 # @pytest.fixture
 # def example_history():
@@ -135,7 +144,7 @@ def test_colorize_text_bold_reset():
 
 # def test_history_plotter(example_history):
 #     plotter = HistoryPlotter(history=example_history)
-    
+
 #     plotter.plot_all()
 #     plotter.plot_loss()
 #     plotter.plot_lr()

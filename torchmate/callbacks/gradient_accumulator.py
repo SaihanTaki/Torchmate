@@ -1,6 +1,6 @@
 from typing import Optional
-from torchmate.callbacks import Callback
 
+from torchmate.callbacks import Callback
 
 
 class GradientAccumulator(Callback):
@@ -21,24 +21,23 @@ class GradientAccumulator(Callback):
         callbacs = [gradient_accumulator]
 
     """
-    
-    def __init__(self,num_accum_steps:Optional[int] = None):
+
+    def __init__(self, num_accum_steps: Optional[int] = None):
         super().__init__()
         self.batch_count = 0
         self.num_accum_steps = num_accum_steps
-        
-    def on_experiment_begin(self,trainer):
+
+    def on_experiment_begin(self, trainer):
         trainer.update_params = False
-        if not self.num_accum_steps == None:
+        if self.num_accum_steps is not None:
             trainer.accumulation_steps = self.num_accum_steps
-        
-    
-    def on_train_batch_begin(self,trainer):
+
+    def on_train_batch_begin(self, trainer):
         self.batch_count += 1
         if (self.batch_count % trainer.accumulation_steps == 0) or (self.batch_count == len(trainer.train_dataloader)):
             trainer.update_params = True
         else:
             trainer.update_params = False
-            
+
     # def on_train_batch_end(self,trainer):
     #     self.batch_count += 1

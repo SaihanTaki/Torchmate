@@ -7,19 +7,18 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 
-
 import datetime
-import sys
 import os
+import sys
+
 import matplotlib
 
+sys.path.append("..")
 
-sys.path.append('..')
 
-
-project = 'Torchmate'
-copyright = f'{datetime.datetime.now().year}, Abdullah Saihan Taki'
-author = 'Abdullah Saihan Taki'
+project = "Torchmate"
+copyright = f"{datetime.datetime.now().year}, Abdullah Saihan Taki"
+author = "Abdullah Saihan Taki"
 
 
 def get_version():
@@ -35,33 +34,33 @@ version = get_version()
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["sphinx_rtd_theme",
-            "sphinx.ext.coverage",
-            "sphinx.ext.napoleon",
-            "sphinx.ext.viewcode",
-            "sphinx.ext.mathjax",
-            "autodocsumm",
-            'sphinx_copybutton',
-            'notfound.extension',
-            'nbsphinx']
+extensions = [
+    "sphinx_rtd_theme",
+    "sphinx.ext.coverage",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.viewcode",
+    "sphinx.ext.mathjax",
+    "autodocsumm",
+    "sphinx_copybutton",
+    "notfound.extension",
+    "nbsphinx",
+]
 
 
-templates_path = ['_templates']
+templates_path = ["_templates"]
 exclude_patterns = []
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'sphinx_rtd_theme'
-html_static_path = ['_static']
+html_theme = "sphinx_rtd_theme"
+html_static_path = ["_static"]
 html_logo = "logo.png"
 html_css_files = [
-    'faculty.css', 
+    "faculty.css",
     # https://github.com/facultyai/faculty-sphinx-theme/blob/master/faculty_sphinx_theme/static/css/faculty.css
 ]
-html_theme_option = {
-    "style_external_link": True
-}
+html_theme_option = {"style_external_link": True}
 
 # -- Extension configuration -------------------------------------------------
 
@@ -70,27 +69,21 @@ autodoc_inherit_docstrings = False
 napoleon_google_docstring = True
 napoleon_include_init_with_doc = False
 napoleon_numpy_docstring = False
-autodoc_member_order = 'bysource'
+autodoc_member_order = "bysource"
 
 
 autodoc_mock_imports = [
     "torch",
     "numpy",
     "wandb",
-    "matplotlib"
-    "matplotlib.pyplot"
-    "torchmate"
-    "torchmate.trainer"
-    "torchmate.callbacks"
-    "torchmate.utils"
+    "matplotlib" "matplotlib.pyplot" "torchmate" "torchmate.trainer" "torchmate.callbacks" "torchmate.utils",
 ]
 
 autoclass_content = "both"
-#autodoc_typehints = "description"
+# autodoc_typehints = "description"
 
 # --- Work around to make autoclass signatures not (*args, **kwargs) ----------
 # https://github.com/qubvel/segmentation_models.pytorch/blob/master/docs/conf.py
-
 
 
 class FakeSignature:
@@ -105,5 +98,3 @@ def f(app, obj, bound_method):
 
 def setup(app):
     app.connect("autodoc-before-process-signature", f)
-
-
