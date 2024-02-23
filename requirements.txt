@@ -1,14 +1,3 @@
-torch
-numpy
-pandas
-matplotlib
-wandb
-pytest
-pytest-mock
-PyQt5
-sphinx
-autodocsumm
-sphinx-rtd-theme
-sphinx-notfound-page
-sphinx-copybutton
-nbsphinx
+numpy>=1.26.4
+matplotlib>=3.8.3
+wandb>=0.16.3

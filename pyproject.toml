@@ -1,6 +1,90 @@
+[build-system]
+requires = [
+    # setuptools 61+ required for pyproject.toml support
+    "setuptools>=61",
+]
+build-backend = "setuptools.build_meta"
+
+# https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
+[project]
+name = "torchmate"
+description = "Torchmate: A High level PyTorch Training Library"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE.txt"}
+authors = [
+    {name = "Abdullah Saihan Taki", email = "saihan0176@gmail.com"},
+]
+keywords = ["pytorch", "deep learning", "machine learning", "callbacks", "model", "training"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = ["requirements.txt"]
+
+dynamic = ["version"]
+
+[project.optional-dependencies]
+style = [
+    "pre-commit>=3.6.2",
+    "black>=24.1.1",
+    "flake8>=7.0.0",
+    "isort>=5.13.2",
+]
+tests = [
+    "pytest>=8.0.1",
+    "pytest-mock>=3.12.0",
+    "coverage>=7.4.1",
+    "six>=1.16.0",
+ 
+]
+docs = [
+  "Sphinx==7.2.6",
+  "sphinx-copybutton==0.5.2",
+  "sphinx-notfound-page==1.0.0",
+  "sphinx-rtd-theme==2.0.0",
+  "sphinxcontrib-applehelp==1.0.8",
+  "sphinxcontrib-devhelp==1.0.6",
+  "sphinxcontrib-htmlhelp==2.0.5",
+  "sphinxcontrib-jquery==4.1",
+  "sphinxcontrib-jsmath==1.0.1",
+  "sphinxcontrib-qthelp==1.0.7",
+  "sphinxcontrib-serializinghtml==1.1.10",
+  "autodocsumm==0.2.12",
+  "nbsphinx==0.9.3",
+  "matplotlib==3.8.3",
+]
+
+dev = [
+    "torchmate[tests,style]"
+]
+all = [
+    "torchmate[tests,style,docs]",
+]
+
+[project.urls]
+Homepage = "https://github.com/SaihanTaki/torchmate"
+Documentation = "https://torchmate.readthedocs.io/en/latest/"
+
+[tool.setuptools.dynamic]
+version = {attr = "torchmate.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["torchmate*"]
+
+
+
+
 [tool.black]
 line-length = 120
-target-version = ['py37', 'py38', 'py39', 'py310']
+target-version = ['py39', 'py310']
 include = '\.pyi?$'
 exclude = '''
 /(
@@ -21,3 +105,4 @@ exclude = '''
 
 [tool.isort]
 profile = "black"
+
