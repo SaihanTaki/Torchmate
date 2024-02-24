@@ -14,7 +14,7 @@ import sys
 import matplotlib
 
 sys.path.append("..")
-
+import torchmate
 
 project = "Torchmate"
 copyright = f"{datetime.datetime.now().year}, Abdullah Saihan Taki"
@@ -22,10 +22,9 @@ author = "Abdullah Saihan Taki"
 
 
 def get_version():
-    sys.path.append("../torchmate")
-    from __version__ import __version__ as version
+    sys.path.append("..")
+    from torchmate.__version__ import __version__ as version
 
-    sys.path.pop(-1)
     return version
 
 
@@ -76,11 +75,17 @@ autodoc_mock_imports = [
     "torch",
     "numpy",
     "wandb",
-    "matplotlib" "matplotlib.pyplot" "torchmate" "torchmate.trainer" "torchmate.callbacks" "torchmate.utils",
+    "matplotlib",
+    "matplotlib.pyplot",
+    "torchmate",
+    "torchmate.trainer",
+    "torchmate.callbacks",
+    "torchmate.utils",
 ]
 
 autoclass_content = "both"
 # autodoc_typehints = "description"
+
 
 # --- Work around to make autoclass signatures not (*args, **kwargs) ----------
 # https://github.com/qubvel/segmentation_models.pytorch/blob/master/docs/conf.py

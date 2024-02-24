@@ -11,13 +11,6 @@ import sys
 
 from setuptools import Command, find_packages, setup
 
-# from dotenv import load_dotenv
-
-# load_dotenv()
-
-# TESTPYPI_USERNAME = os.getenv("TESTPYPI_USERNAME")
-# TESTPYPI_PASSWORD = os.getenv("TESTPYPI_PASSWORD")
-
 # Package meta-data.
 NAME = "torchmate"
 DESCRIPTION = "Torchmate: A High level PyTorch Training Library"
