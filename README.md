@@ -1,11 +1,14 @@
 <div align="center">
  
-![logo](docs/logo.png)  
+![logo](https://i.ibb.co/tzsKgkR/Torchmate-logo-v1.png)  
 **A High level PyTorch Training Library**
 
-[![Generic badge](https://img.shields.io/badge/License-MIT-<COLOR>.svg?style=flat)](https://github.com/SaihanTaki/torchmate/blob/master/LICENSE.txt)
-[![Read the Docs](https://img.shields.io/readthedocs/torchmate?style=flat&logo=readthedocs&logoColor=white)](https://torchmate.readthedocs.io/en/latest/)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) 
+[![Read the Docs](https://img.shields.io/readthedocs/torchmate?style=flat&logo=readthedocs&logoColor=orange&color=blue)](https://torchmate.readthedocs.io/en/latest/)
+[![PyPI](https://img.shields.io/pypi/v/torchmate?style=flat)](https://pypi.org/project/torchmate/)
+[![Code style: black](https://img.shields.io/badge/Code%20Style-black-000000.svg)](https://github.com/psf/black)
+[![MIT License](https://img.shields.io/badge/License-MIT-<COLOR>.svg?style=flat)](https://github.com/SaihanTaki/torchmate/blob/master/LICENSE.txt)
+![Python Version](https://img.shields.io/pypi/pyversions/torchmate?style=flat)
+ 
 
 </div>
 
