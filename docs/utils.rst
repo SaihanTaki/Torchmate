@@ -40,6 +40,12 @@ colorize_text
 ----------------------------------
 
 .. autofunction:: torchmate.utils.colorize_text
+
+model_info
+----------------------------------
+
+.. autofunction:: torchmate.utils.model_info
+
   
 
 
