@@ -1,7 +1,7 @@
 <div align="center">
  
 ![logo](https://i.ibb.co/tzsKgkR/Torchmate-logo-v1.png)  
-**A High level PyTorch Training Library**
+**A High level PyTorch Training and Utility Library**
 
 [![Read the Docs](https://img.shields.io/readthedocs/torchmate?style=flat&logo=readthedocs&logoColor=orange&color=blue)](https://torchmate.readthedocs.io/en/latest/)
 [![PyPI](https://img.shields.io/pypi/v/torchmate?style=flat)](https://pypi.org/project/torchmate/)
@@ -32,11 +32,12 @@ So, why did I write Torchmate? I was a big fan of TensorFlow and Keras. But duri
 - **Callback Mechanism:** Monitor progress, save checkpoints, early stopping and extend functionality with custom callbacks.
 - **Experiment Tracking:** Integrate dedicated tools like Weights & Biases or TensorBoard through callbacks.
 - **Minimal Dependency:** Torchmate only requires four dependencies-  PyTorch (of course), NumPy, Matplotlib, and Weights & Biases (Wandb).
+- **Research Paper Modules:** Implementations of various research paper models, facilitating reproducibility and experimentation.
 
 
 ### ⚙️ Installation
 
-First Install PyTorch on your envioronment. Then install torchmate via pip.
+First make sure that PyTorch is installed on your envioronment. Then install torchmate via pip.
 
 **From PyPI:**
 ```Bash
