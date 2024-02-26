@@ -32,7 +32,7 @@ So, why did I write Torchmate? I was a big fan of TensorFlow and Keras. But duri
 - **Callback Mechanism:** Monitor progress, save checkpoints, early stopping and extend functionality with custom callbacks.
 - **Experiment Tracking:** Integrate dedicated tools like Weights & Biases or TensorBoard through callbacks.
 - **Minimal Dependency:** Torchmate only requires four dependencies-  PyTorch (of course), NumPy, Matplotlib, and Weights & Biases (Wandb).
-- **Research Paper Modules:** Implementations of various research paper models, facilitating reproducibility and experimentation.
+- **Research Paper Modules:** Implementations of various modules from research papers, facilitating reproducibility and experimentation.
 
 
 ### ⚙️ Installation
