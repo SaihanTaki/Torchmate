@@ -15,6 +15,7 @@ Welcome to Torchmate's documentation!
    quickstart.rst
    trainer.rst
    callbacks.rst
+   modules.rst
    utils.rst
  
 
