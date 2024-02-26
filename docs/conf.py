@@ -22,7 +22,6 @@ author = "Abdullah Saihan Taki"
 
 
 def get_version():
-    sys.path.append("..")
     from torchmate.__version__ import __version__ as version
 
     return version
@@ -77,10 +76,6 @@ autodoc_mock_imports = [
     "wandb",
     "matplotlib",
     "matplotlib.pyplot",
-    "torchmate",
-    "torchmate.trainer",
-    "torchmate.callbacks",
-    "torchmate.utils",
 ]
 
 autoclass_content = "both"
