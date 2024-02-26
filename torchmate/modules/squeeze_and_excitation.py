@@ -34,7 +34,7 @@ class ChannelSELayer(torch.nn.Module):
             by in the squeeze step. Default is ``2``.
 
     Returns:
-        output_tensor (torch.Tensor): Output tensor with the same dimensions as
+        torch.Tensor: Output tensor with the same dimensions as
         the input.
 
     Reference:
@@ -59,7 +59,7 @@ class ChannelSELayer(torch.nn.Module):
             input_tensor: X, shape = (batch_size, num_channels, H, W)
 
         Returns:
-            output_tensor (torch.Tensor): Output tensor with the same dimensions as the input.
+            torch.Tensor: Output tensor with the same dimensions as the input.
         """
 
         batch_size, num_channels, H, W = input_tensor.size()
@@ -86,7 +86,7 @@ class SpatialSELayer(torch.nn.Module):
         num_channels (int): Number of input channels.
 
     Returns:
-        output_tensor (torch.Tensor): Output tensor with the same dimensions as
+        torch.Tensor: Output tensor with the same dimensions as
         the input.
 
     Reference:
@@ -108,7 +108,7 @@ class SpatialSELayer(torch.nn.Module):
             weights: weights for few shot learning
 
         Returns:
-            output_tensor (torch.Tensor): Output tensor with the same dimensions as the input.
+            torch.Tensor: Output tensor with the same dimensions as the input.
         """
         # spatial squeeze
         batch_size, channel, a, b = input_tensor.size()
@@ -142,7 +142,7 @@ class ChannelSpatialSELayer(torch.nn.Module):
         by in the squeeze step. Default is ``2``.
 
     Returns:
-        output_tensor (torch.Tensor): Output tensor with the same dimensions as the input.
+        torch.Tensor: Output tensor with the same dimensions as the input.
 
     Reference:
         - Paper: https://arxiv.org/abs/1803.02579
@@ -163,7 +163,7 @@ class ChannelSpatialSELayer(torch.nn.Module):
             input_tensor: X, shape = (batch_size, num_channels, H, W)
 
         Returns:
-            output_tensor (torch.Tensor): Output tensor with the same dimensions as the input.
+            torch.Tensor: Output tensor with the same dimensions as the input.
 
         """
         output_tensor = torch.max(self.cSE(input_tensor), self.sSE(input_tensor))
