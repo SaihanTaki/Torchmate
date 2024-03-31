@@ -3,11 +3,15 @@
 ![logo](https://i.ibb.co/tzsKgkR/Torchmate-logo-v1.png)  
 **A High level PyTorch Training and Utility Library**
 
-[![Read the Docs](https://img.shields.io/readthedocs/torchmate?style=flat&logo=readthedocs&logoColor=orange&color=blue)](https://torchmate.readthedocs.io/en/latest/)
-[![PyPI](https://img.shields.io/pypi/v/torchmate?style=flat)](https://pypi.org/project/torchmate/)
-[![Code style: black](https://img.shields.io/badge/Code%20Style-black-000000.svg)](https://github.com/psf/black)
-[![MIT License](https://img.shields.io/badge/License-MIT-<COLOR>.svg?style=flat)](https://github.com/SaihanTaki/torchmate/blob/master/LICENSE.txt)
-[![Python Version](https://img.shields.io/pypi/pyversions/torchmate?style=flat)](https://www.python.org/)
+[![GitHub Workflow Status (branch)](https://github.com/SaihanTaki/Torchmate/actions/workflows/pypi.yml/badge.svg)](https://github.com/SaihanTaki/Torchmate/actions/workflows/pypi.yml)
+[![GitHub Workflow Status (branch)](https://github.com/SaihanTaki/Torchmate/actions/workflows/tests.yml/badge.svg)](https://github.com/SaihanTaki/Torchmate/actions/workflows/tests.yml) 
+[![Codecov](https://img.shields.io/codecov/c/github/SaihanTaki/Torchmate?logo=codecov&labelColor=3B434B)](https://app.codecov.io/gh/SaihanTaki/Torchmate)
+[![Read the Docs](https://img.shields.io/readthedocs/torchmate?style=flat&logo=readthedocs&logoColor=orange&color=blue&labelColor=3B434B)](https://torchmate.readthedocs.io/en/latest/)
+
+[![PyPI](https://img.shields.io/pypi/v/torchmate?style=flat&labelColor=3B434B)](https://pypi.org/project/torchmate/)
+[![Code Style](https://img.shields.io/badge/codestyle-black-black?style=flat&label=code%20style&labelColor=3B434B)](https://github.com/psf/black)
+[![MIT License](https://img.shields.io/badge/License-MIT-<COLOR>.svg?style=flat&labelColor=3B434B)](https://github.com/SaihanTaki/Torchmate/blob/main/LICENSE.txt)
+[![Python Version](https://img.shields.io/pypi/pyversions/torchmate?style=flat&labelColor=3B434B)](https://www.python.org/)
  
 
 </div>
