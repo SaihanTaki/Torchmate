@@ -45,6 +45,7 @@ REQUIRES_TESTS = [
     "pytest>=8.0.1",
     "pytest-mock>=3.12.0",
     "coverage>=7.4.1",
+    "pytest-cov>=5.0.0",
     "six>=1.16.0",
 ]
 
@@ -107,8 +108,11 @@ class UploadCommand(Command):
 
     @staticmethod
     def status(s):
-        """Prints things in bold."""
-        print(s)
+        """Prints things in color."""
+        BG = "\033[46m"
+        FG = "\033[30m"
+        RESET = "\033[0m"
+        print(FG + BG + s + RESET)
 
     def initialize_options(self):
         pass
@@ -119,12 +123,13 @@ class UploadCommand(Command):
     def run(self):
         try:
             self.status("Removing previous builds...")
+            print("\n")
             shutil.rmtree(os.path.join(here, "dist"))
         except OSError:
             pass
 
         self.status("Building Source and Wheel (universal) distribution...")
-        os.system("{0} setup.py sdist bdist_wheel --universal".format(sys.executable))
+        os.system(f"{sys.executable} setup.py sdist bdist_wheel --universal")
 
         # updated before uploading to main pypi
         self.status("Uploading the package to PyPI via Twine...")
