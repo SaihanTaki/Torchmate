@@ -1,0 +1,2 @@
+[run]
+omit = torchmate/__*.py, torchmate/*/__*.py
