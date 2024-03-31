@@ -29,6 +29,8 @@ jobs:
       run: make flake8
     - name: Run Black
       run: make black
+    - name: Run Isort
+      run: make isort
 
 
   test:
