@@ -1,0 +1,44 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+{
+	"name": "Torchmate",
+	"build": {
+		// Sets the run context to one level up instead of the .devcontainer folder.
+		"context": "..",
+		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+		"dockerfile": "../docker/Dockerfile.dev"
+	},
+
+
+	"mounts": [
+		"source=${localWorkspaceFolder}/,target=/code,type=bind,consistency=cached"
+	],
+
+	"workspaceFolder": "/code",
+
+	"postCreateCommand": "make install_all",
+		
+
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers-contrib/features/curl-apt-get:1": {}
+	},
+
+
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"GitHub.github-vscode-theme",
+				"ms-python.black-formatter",
+				"ms-python.flake8",
+				"ms-azuretools.vscode-docker",
+				"ritwickdey.LiveServer",
+				"ms-python.python",
+				"ms-python.debugpy"
+			]
+		}
+	}
+
+
+}
