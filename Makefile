@@ -15,38 +15,40 @@ $(VENV_NAME):
 
 # Installation Rules
 
-install_torch_cpu:
+install_torch_cpu: $(VENV_NAME)
 	@echo -e "$(FG)$(BG)Installing PyTorch $(TORCH_VERSION)+cpu.......$(RESET)"
-	$(VENV_NAME)/bin/python -m pip install --upgrade pip			
-	$(VENV_NAME)/bin/pip install torch==$(TORCH_VERSION)+cpu -f https://download.pytorch.org/whl/torch_stable.html
+	$(VENV_NAME)/bin/python3 -m pip install --upgrade pip			
+	$(VENV_NAME)/bin/pip3 install torch==$(TORCH_VERSION)+cpu -f https://download.pytorch.org/whl/torch_stable.html
 
 install_dev: $(VENV_NAME) install_torch_cpu
 	@echo -e "$(FG)$(BG)Installing Dependencies.......$(RESET)"
-	$(VENV_NAME)/bin/pip install -r requirements.txt
+	$(VENV_NAME)/bin/pip3 install -r requirements.txt
 	@echo -e "$(FG)$(BG)Installing Optional Dependencies (for linting, testing etc).......$(RESET)"
-	$(VENV_NAME)/bin/pip install -r requirements_dev.txt
+	$(VENV_NAME)/bin/pip3 install -r requirements_dev.txt
+	@echo -e "$(FG)$(BG)Installing pre-commit as git hook.......$(RESET)"
+	git config --global --add safe.directory $(shell pwd)
 	$(VENV_NAME)/bin/pre-commit install
 
 install_doc_req: $(VENV_NAME)
 	@echo -e "$(FG)$(BG)Installing documentation dependencies.......$(RESET)"
-	$(VENV_NAME)/bin/python -m pip install --upgrade pip
-	$(VENV_NAME)/bin/pip install -r docs/requirements.txt
+	$(VENV_NAME)/bin/python3 -m pip install --upgrade pip
+	$(VENV_NAME)/bin/pip3 install -r docs/requirements.txt
 
 install_pypi_req: $(VENV_NAME)
 	@echo -e "$(FG)$(BG)Installing dependencies for building and uploading to pypi.......$(RESET)"
-	$(VENV_NAME)/bin/python -m pip install --upgrade pip
-	$(VENV_NAME)/bin/pip install setuptools twine wheel
+	$(VENV_NAME)/bin/python3 -m pip install --upgrade pip
+	$(VENV_NAME)/bin/pip3 install setuptools twine wheel
 
 install_all: install_dev install_doc_req install_pypi_req
 	@echo -e "$(FG)$(BG)All the dependencies for the package, testing, styling, pypi and documentation are installed!$(RESET)"
 
 
-
+	
 # Styling and Testing Rules
 
 test: $(VENV_NAME)
 	@echo -e "$(FG)$(BG)Testing the Package.......$(RESET)"
-	$(VENV_NAME)/bin/python -m pytest --cov=torchmate --cov-report xml:coverage.xml --cov-report term --cov-config=.coveragerc 
+	$(VENV_NAME)/bin/python3 -m pytest --cov=torchmate --cov-report xml:coverage.xml --cov-report term --cov-config=.coveragerc 
 
 black: $(VENV_NAME)
 	@echo -e "$(FG)$(BG)Running Black.......$(RESET)"
