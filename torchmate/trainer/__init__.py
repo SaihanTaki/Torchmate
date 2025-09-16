@@ -10,6 +10,6 @@ tailored evaluation and logging during training.
 
 """
 
-from torchmate.trainer.trainer import Trainer
+from torchmate.trainer.trainer import ModelTrainer
 
 # __all__ = ["Trainer"]
