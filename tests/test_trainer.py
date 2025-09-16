@@ -8,7 +8,7 @@ import wandb
 
 sys.path.append("..")
 
-from torchmate.trainer import Trainer  # noqa: E402
+from torchmate.trainer import ModelTrainer  # noqa: E402
 
 
 @pytest.fixture
@@ -77,7 +77,7 @@ def create_trainer(create_data, create_model, create_metrics):
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=2, gamma=0.1)
     metrics = [MSE(), mae]
 
-    trainer = Trainer(
+    trainer = ModelTrainer(
         model,
         train_loader,
         val_loader,
@@ -117,7 +117,7 @@ def test_trainer_evaluate(create_data, create_model, create_metrics):
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=1, mode="min")
     metrics = [MSE(), mae]
 
-    trainer = Trainer(
+    trainer = ModelTrainer(
         model,
         train_loader,
         val_loader,
