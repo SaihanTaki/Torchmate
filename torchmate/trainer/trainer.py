@@ -9,7 +9,7 @@ from torchmate.callbacks import Callback
 from torchmate.utils import ProgressBar, RunningAverage, colorize_text
 
 
-class Trainer(torch.nn.Module):
+class ModelTrainer(torch.nn.Module):
     """Encapsulate training essentials
 
     Args:
